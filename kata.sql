@@ -123,3 +123,13 @@ VALUES
   ("Patience","Erickson",0),
   ("Sheila","Holmes",0),
   ("Yael","Anderson",0);
+
+
+  /**
+    Correction 
+  */
+
+UPDATE employee as nameTaker, employee as nameGiver 
+INNER JOIN nameTaker ON nameTaker.spouse_id = nameGiver.id
+SET nameTaker.lastname = nameGiver.lastname
+WHERE nameTaker.spouse_id <> 0;
